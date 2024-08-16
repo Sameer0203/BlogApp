@@ -38,6 +38,7 @@ import com.testSpringProj.security.JwtAuthenticationFilter;
 public class SecurityConfig{
 	
 	public static final String[] PUBLIC_URL = { 
+			"/h2-console/**",
 			"/api/auth/**",
 			"/v3/api-docs/**", 
 			"/v2/api-docs",
@@ -72,6 +73,9 @@ public class SecurityConfig{
 	    
 	    http.addFilterBefore(this.jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
+	 // Enable H2 console frame support
+        http.headers().frameOptions().sameOrigin();
+	    
 	    return http.build();
     }
 	
