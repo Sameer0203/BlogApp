@@ -110,7 +110,7 @@ public class PostServiceImpl implements PostService {
 		
 		Post createdPost = this.postRepo.save(post);
 
-		this.likeServiceImpl.createLike(userId, createdPost.getPostId(), 0, false);
+		this.likeServiceImpl.createLike(userId, createdPost.getPostId(), 0, false, false);
 		
 		return this.modelMapper.map(createdPost, PostDto.class);
 	}
