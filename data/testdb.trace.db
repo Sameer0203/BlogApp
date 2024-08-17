@@ -10,3 +10,5 @@ create table user_role (user integer not null, role integer not null, primary ke
 2024-08-17 18:13:22.899421+05:30 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists user_role add constraint FKlduspqw8rg0gbcpludbfadw6l foreign key ([*]user) references users"; expected "identifier"; SQL statement:
 alter table if exists user_role add constraint FKlduspqw8rg0gbcpludbfadw6l foreign key (user) references users [42001-224]
+2024-08-17 18:19:50.651868+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-224]

@@ -1,7 +1,9 @@
 package com.testSpringProj.main;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -130,7 +132,9 @@ public class PostController {
 			HttpServletResponse response
 			) throws IOException {
 		
-		InputStream resource = this.fileService.getResource(path, imageName);
+		//InputStream resource = this.fileService.getResource(path, imageName);
+		String fullPath = path + File.separator + imageName;
+		InputStream resource = new URL(fullPath).openStream();
 		response.setContentType(MediaType.IMAGE_JPEG_VALUE);
 		StreamUtils.copy(resource, response.getOutputStream());
 		
