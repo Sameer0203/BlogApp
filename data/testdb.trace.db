@@ -4,3 +4,9 @@ create table user_role (user integer not null, role integer not null, primary ke
 2024-08-16 21:31:34.285509+05:30 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists user_role add constraint FKlduspqw8rg0gbcpludbfadw6l foreign key ([*]user) references users"; expected "identifier"; SQL statement:
 alter table if exists user_role add constraint FKlduspqw8rg0gbcpludbfadw6l foreign key (user) references users [42001-224]
+2024-08-17 18:13:22.727053+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table user_role ([*]user integer not null, role integer not null, primary key (user, role))"; expected "identifier"; SQL statement:
+create table user_role (user integer not null, role integer not null, primary key (user, role)) [42001-224]
+2024-08-17 18:13:22.899421+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists user_role add constraint FKlduspqw8rg0gbcpludbfadw6l foreign key ([*]user) references users"; expected "identifier"; SQL statement:
+alter table if exists user_role add constraint FKlduspqw8rg0gbcpludbfadw6l foreign key (user) references users [42001-224]
