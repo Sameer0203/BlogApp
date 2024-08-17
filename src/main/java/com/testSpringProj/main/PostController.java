@@ -3,6 +3,7 @@ package com.testSpringProj.main;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
 
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.testSpringProj.config.AppConstants;
@@ -132,9 +134,7 @@ public class PostController {
 			HttpServletResponse response
 			) throws IOException {
 		
-		//InputStream resource = this.fileService.getResource(path, imageName);
-		String fullPath = path + File.separator + imageName;
-		InputStream resource = new URL(fullPath).openStream();
+		InputStream resource = this.fileService.getResource(path, imageName);
 		response.setContentType(MediaType.IMAGE_JPEG_VALUE);
 		StreamUtils.copy(resource, response.getOutputStream());
 		
