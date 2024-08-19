@@ -1,7 +1,5 @@
 # The Blogs App
 
-![image](https://theblogsapp.netlify.app/)
-
 The Blogs App is a full-stack web application that allows users to create, manage, and share blog posts. The application is built with Spring Boot on the backend, React.js on the frontend, and uses JWT authentication for secure access. The project is containerized using Docker, enabling easy deployment and scaling.
 
 ## Website Preview
